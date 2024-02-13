@@ -1,0 +1,27 @@
+<div class="row justify-content-center align-item-center">
+    <div class="card col-10 col-lg-6 col-md-8 mt-5 p-4">
+        <h4>Login</h4>
+        <form [formGroup]="form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    formControlName="email">
+                    <div  *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+                        <div *ngIf="form.get('email')?.hasError('required')" class="text-danger">email is required.</div>
+                    </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                <div  *ngIf="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)">
+                    <div *ngIf="form.get('password')?.hasError('required')" class="text-danger">password is required.</div>
+                </div>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="remember">
+                <label class="form-check-label" for="exampleCheck1">remember me</label>
+            </div>
+            <button class="btn btn-primary" (click)="login()">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="row justify-content-center align-item-center">
+    <ng-container *ngFor="let item of userList;let i=index">
+        <div class="col-3">
+            <div class="card text-bg-primary mb-3">
+                <div class="card-header">{{i + 1}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{item.firstname + item.lastname}}</h5>
+                    <p class="card-text">{{item.email}}</p>
+                   
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    
+</div>
