@@ -40,6 +40,6 @@ export class LoginComponent implements OnInit {
       })
     }
 
-    this.form.markAsDirty()
+    this.form.markAllAsTouched();
   }
 }
